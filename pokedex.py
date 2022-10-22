@@ -76,13 +76,13 @@ class PokeDex:
     def listPlayers(self):
         current = self.PlayerHead
         while current:
-            print(current.data)
+            print(repr(current))
             current = current.next
 
     def listPokemon(self):
         current = self.PokemonHead
         while current:
-            print(current.data)
+            print(repr(current))
             current = current.next
 
     def DisplayPlayerDetails(self, name):
@@ -145,6 +145,9 @@ class PokemonNode:
 
         return {"Name": self.data["name"], "Types": type, "Abilities": ability}
 
+    def __repr__(self):
+        return f"Name : {self.data['name']}, Type : {self.pokemeta()['Types']}"
+
     def __str__(self):
         out = ""
         for key, value in self.pokemeta().items():
@@ -167,7 +170,7 @@ class PokemonNode:
 # Node for Player
 class PlayerNode:
     def __init__(self, name: str):
-        self.data = {"name": name, "pokemon": []}
+        self.data = {"name": name, "pokemon": [], "pokemons": 0}
         self.next = None
 
     def __str__(self):
@@ -175,6 +178,9 @@ class PlayerNode:
         for pokemon in self.data["pokemon"]:
             d.append(pokemon.pokemeta())
         return f"Trainer: {self.data['name']}\nPokemons: {d}"
+
+    def __repr__(self) -> str:
+        return f"Trainer: {self.data['name']}, Pokemons: {self.data['pokemons']}"
 
     def findPlayer(pokeDex: PokeDex, name: str):
         if name in pokeDex.PlayerCache:
@@ -196,3 +202,4 @@ class PlayerNode:
             return
 
         self.data["pokemon"].append(pokemon)
+        self.data["pokemons"] += 1

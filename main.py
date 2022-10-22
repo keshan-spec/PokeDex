@@ -41,9 +41,10 @@ misty.AddPokemonToPlayer(pokedex, "Bulbasaur")
 
 # Print out the pokedex
 pokedex.listPlayers()
-pokedex.listPokemon()
 print("\n")
+pokedex.listPokemon()
 
+print("\n")
 # Print out the player details
 pokedex.DisplayPlayerDetails("Ash")
 pokedex.DisplayPlayerDetails("Misty")
@@ -51,4 +52,4 @@ pokedex.DisplayPlayerDetails("Misty")
 print("\n")
 # Print out the pokemon details
 pokedex.DisplayPokemonDetails("Pikachu")
-pokedex.DisplayPokemonDetails("Squirtle")
+pokedex.DisplayPokemonDetails("Charmander")
