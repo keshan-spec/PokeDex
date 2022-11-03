@@ -200,6 +200,6 @@ class PlayerNode:
         if pokemon is None:
             print("Pokemon not found")
             return
+        self.data["pokemons"] += 1
 
         self.data["pokemon"].append(pokemon)
-        self.data["pokemons"] += 1
