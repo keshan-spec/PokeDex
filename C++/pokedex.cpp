@@ -6,21 +6,35 @@
 
 int main()
 {
+
     // create a new pokemon
     PokemonNode *pikachu = new PokemonNode;
     pikachu->name = "Pikachu";
     pikachu->type = "Electric";
     pikachu->ability = "Static";
-    pikachu->next = nullptr;
+
+    PokemonNode *charmander = new PokemonNode;
+    charmander->name = "Charmander";
+    charmander->type = "Fire";
+    charmander->ability = "Blaze";
+
+    PokemonNode *squirtle = new PokemonNode;
+    squirtle->name = "Squirtle";
+    squirtle->type = "Water";
+    squirtle->ability = "Torrent";
+    squirtle->next = nullptr;
+
+    pikachu->next = charmander;
+    charmander->next = squirtle;
 
     // create a new player
     PlayerNode *ash = new PlayerNode;
     ash->name = "Ash";
-    ash->pokemons.push_back(*pikachu);
+    ash->addPokemon(*pikachu);
     ash->next = nullptr;
 
     // create a new pokedex entry
-    PokeDexEntry *pokedex = new PokeDexEntry;
+    PokeDex *pokedex = new PokeDex;
     pokedex->pokemonsPtr = pikachu;
     pokedex->playerPtr = ash;
 
