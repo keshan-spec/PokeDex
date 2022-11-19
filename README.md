@@ -11,12 +11,12 @@ Feature Requirements
 5. Create functions to add, create, find nodes (by pokemon name).
 6. Pokemon Functions:
     - [x] newPokemonNode(name, type, ability) -> ptr*Pokemon Node
-    - [ ] addPokemonToList(*pokedex, name, type, ability) -> void
-    - [ ] findPokemon(pokedex, name) -> ptr*Pokemon Node
+    - [x] addPokemonToList(*pokedex, name, type, ability) -> void
+    - [x] findPokemon(pokedex, name) -> ptr*Pokemon Node
 7. Player Functions:
-    - [ ] newPlayerNode(name) -> ptr*Player Node
-    - [ ] addPlayerToList(*pokedex, name) -> void
-    - [ ] findPlayer(pokedex, name) -> ptr*Player Node
+    - [x] newPlayerNode(name) -> ptr*Player Node
+    - [x] addPlayerToList(*pokedex, name) -> void
+    - [x] findPlayer(pokedex, name) -> ptr*Player Node
     - [ ] addPokemonToPlayer(pokedex, playerName, pokemonName) -> void (adds pokemon if not found else increment it count)
 
 8. Pokedex Functions:
