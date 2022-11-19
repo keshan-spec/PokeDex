@@ -9,21 +9,21 @@ Feature Requirements
 3. Pokemons and Players should be a LinkedList. 
 4. Pokemon Node should store a pokemons' (name, type, primary abilities)
 5. Create functions to add, create, find nodes (by pokemon name).
-6. Pokemon Functions:<br>
-    [x] newPokemonNode(name, type, ability) -> ptr*Pokemon Node
-    [ ] addPokemonToList(*pokedex, name, type, ability) -> void
-    [ ] findPokemon(pokedex, name) -> ptr*Pokemon Node
-7. Player Functions:<br>
-    [ ] newPlayerNode(name) -> ptr*Player Node
-    [ ] addPlayerToList(*pokedex, name) -> void
-    [ ] findPlayer(pokedex, name) -> ptr*Player Node
-    [ ] addPokemonToPlayer(pokedex, playerName, pokemonName) -> void (adds pokemon if not found else increment it count)
+6. Pokemon Functions:
+    - [x] newPokemonNode(name, type, ability) -> ptr*Pokemon Node
+    - [ ] addPokemonToList(*pokedex, name, type, ability) -> void
+    - [ ] findPokemon(pokedex, name) -> ptr*Pokemon Node
+7. Player Functions:
+    - [ ] newPlayerNode(name) -> ptr*Player Node
+    - [ ] addPlayerToList(*pokedex, name) -> void
+    - [ ] findPlayer(pokedex, name) -> ptr*Player Node
+    - [ ] addPokemonToPlayer(pokedex, playerName, pokemonName) -> void (adds pokemon if not found else increment it count)
 
-8. Pokedex Functions:<br>
-    [x] displayPokemonDetails(pokedex, name) -> void (displays all details )
-    [x] displayPlayerDetails(pokedex, name) -> void (displays all details along the details of the pokemons owned)
-    [x] listPokemons(pokedex) -> void  (displays list of names)
-    [x] listPlayers(pokedex) -> void (displays list of names)
+8. Pokedex Functions:
+    - [x] displayPokemonDetails(pokedex, name) -> void (displays all details )
+    - [x] displayPlayerDetails(pokedex, name) -> void (displays all details along the details of the pokemons owned)
+    - [x] listPokemons(pokedex) -> void  (displays list of names)
+    - [x] listPlayers(pokedex) -> void (displays list of names)
 
 # Report
 1. Created structs/classes.
