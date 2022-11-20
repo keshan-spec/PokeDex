@@ -26,14 +26,38 @@ int main()
         {"Nidoran", "Poison", "Poison Point"},
         {"Clefairy", "Fairy", "Cute Charm"}};
 
-    // add pokemons to pokedex
+    // create pokemon nodes
     for (int i = 0; i < pokemonsArr.size(); i++)
     {
         PokemonNode *pokemon = newPokemonNode(pokemonsArr[i][0], pokemonsArr[i][1], pokemonsArr[i][2]);
+        addPokemonToList(pokedex, pokemonsArr[i][0], pokemonsArr[i][1], pokemonsArr[i][2]);
     }
 
-    // addPokemonToList(*pokedex, "Pikachu", "Electric", "Static");
-
     // list pokemons
-    listPokemons(pokedex);
+    // listPokemons(pokedex);
+    // create a player
+    PlayerNode *player = newPlayerNode("Ash");
+    PlayerNode *player2 = newPlayerNode("Misty");
+    PlayerNode *player3 = newPlayerNode("Brock");
+
+    // add player to pokedex
+    addPlayerToList(pokedex, "Ash");
+    addPlayerToList(pokedex, "Misty");
+
+    // listPlayers(pokedex);
+    // listPokemons(pokedex);
+
+    // // add pokemons to player
+    addPokemonToPlayer(pokedex, "Ash", "Bulbasaur");
+    addPokemonToPlayer(pokedex, "Ash", "Charmander");
+    addPokemonToPlayer(pokedex, "Ash", "Squirtle");
+    addPokemonToPlayer(pokedex, "Ash", "Squirtle");
+
+    addPokemonToPlayer(pokedex, "Misty", "Caterpie");
+    addPokemonToPlayer(pokedex, "Misty", "Metapod");
+    addPokemonToPlayer(pokedex, "Misty", "Butterfree");
+
+    displayPlayerDetails(pokedex, "Ash");
+    // displayPokemonDetails(pokedex, "Bulbasaur");
+    displayPlayerDetails(pokedex, "Misty");
 }
