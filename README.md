@@ -17,7 +17,7 @@ Feature Requirements
     - [x] newPlayerNode(name) -> ptr*Player Node
     - [x] addPlayerToList(*pokedex, name) -> void
     - [x] findPlayer(pokedex, name) -> ptr*Player Node
-    - [ ] addPokemonToPlayer(pokedex, playerName, pokemonName) -> void (adds pokemon if not found else increment it count)
+    - [x] addPokemonToPlayer(pokedex, playerName, pokemonName) -> void (adds pokemon if not found else increment it count)
 
 8. Pokedex Functions:
     - [x] displayPokemonDetails(pokedex, name) -> void (displays all details )

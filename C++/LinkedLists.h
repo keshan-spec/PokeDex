@@ -8,7 +8,6 @@
 #include <iomanip>
 #include <algorithm>
 #include <iterator>
-// #include <list>
 #include <map>
 
 using namespace std;
@@ -76,107 +75,135 @@ struct PokeDex
 };
 
 // pokemon functions
-PokemonNode newPokemonNode(string name, string type, string ability);
-void addPokemonToList(PokeDex *pokedex, string name, string type, string ability);
-PokemonNode findPokemon(PokeDex *pokedex, string name);
+// PokemonNode findPokemon(PokeDex *pokedex, string name)
+// {
+//     PokemonNode *current = pokedex->pokemonsPtr;
+//     while (current != nullptr)
+//     {
+//         if (current->name == name)
+//             return current;
+//         current = current->next;
+//     }
+//     return current;
+// }
 
-findPokemon(PokeDex *pokedex, string name)
+PokemonNode *newPokemonNode(string name, string type, string ability)
 {
-    PokemonNode *current = pokedex->pokemonsPtr;
-    while (current != nullptr)
-    {
-        if (current->name == name)
-            return *current;
-        current = current->next;
-    }
-    return *current;
+    PokemonNode *pokemon = new PokemonNode(name, type, ability);
+    // pokemon->name = name;
+    // pokemon->type = type;
+    // pokemon->ability = ability;
+    return pokemon;
 }
 
-newPokemonNode(string name, string type, string ability)
-{
-    return new PokemonNode(name, type, ability);
-}
+// void addPokemonToList(PokeDex *pokedex, string name, string type, string ability)
+// {
+//     // check if pokemon exists
+//     PokemonNode *pokemon = findPokemon(*pokedex, name);
+//     if (pokemon != nullptr)
+//     {
+//         cout << "Pokemon already exists" << endl;
+//         return;
+//     }
 
-addPokemonToList(PokeDex *pokedex, string name, string type, string ability)
-{
-    // check if pokemon exists
-    PokemonNode *pokemon = findPokemon(pokedex, name);
-    if (pokemon != nullptr)
-    {
-        cout << "Pokemon already exists" << endl;
-        return;
-    }
-
-    PokemonNode *newPokemon = newPokemonNode(name, type, ability);
-    PokemonNode *current = pokedex->pokemonsPtr;
-    if (current == nullptr)
-        pokedex->pokemonsPtr = newPokemon;
-    else
-    {
-        while (current->next != nullptr)
-            current = current->next;
-        current->next = newPokemon;
-    }
-}
+//     PokemonNode *newPokemon = newPokemonNode(name, type, ability);
+//     PokemonNode *current = pokedex->pokemonsPtr;
+//     if (current == nullptr)
+//         pokedex->pokemonsPtr = newPokemon;
+//     else
+//     {
+//         while (current->next != nullptr)
+//             current = current->next;
+//         current->next = newPokemon;
+//     }
+// }
 
 // player functions
-PlayerNode newPlayerNode(PokeDex pokedex, string name);
-void addPlayerToList(PokeDex *pokedex, PlayerNode *player);
-PlayerNode findPlayer(PokeDex *pokedex, string name);
-void addPokemonToPlayer(PokeDex *pokedex, string playerName, PokemonNode *pokemon);
+// PlayerNode newPlayerNode(PokeDex pokedex, string name);
+// void addPlayerToList(PokeDex *pokedex, PlayerNode *player);
+// PlayerNode findPlayer(PokeDex *pokedex, string name);
+// void addPokemonToPlayer(PokeDex *pokedex, string playerName, string pokemon);
 
-findPlayer(PokeDex *pokedex, string name)
-{
-    PlayerNode *current = pokedex->playerPtr;
-    while (current != nullptr)
-    {
-        if (current->name == name)
-        {
-            return *current;
-        }
-        current = current->next;
-    }
-    return *current;
-}
+// PlayerNode *findPlayer(PokeDex *pokedex, string name)
+// {
+//     PlayerNode *current = pokedex->playerPtr;
+//     while (current != nullptr)
+//     {
+//         if (current->name == name)
+//         {
+//             return *current;
+//         }
+//         current = current->next;
+//     }
+//     return *current;
+// }
 
-addPlayerToList(PokeDex *pokedex, string name)
-{
-    // check if player node already exists
-    PlayerNode *player = findPlayer(pokedex, name);
-    if (player != nullptr)
-    {
-        cout << "Player already exists" << endl;
-        return;
-    }
+// void addPlayerToList(PokeDex *pokedex, string name)
+// {
+//     // check if player node already exists
+//     PlayerNode *player = findPlayer(pokedex, name);
+//     if (player != nullptr)
+//     {
+//         cout << "Player already exists" << endl;
+//         return;
+//     }
+//     PlayerNode *current = pokedex->playerPtr;
+//     if (current == nullptr)
+//     {
+//         pokedex->playerPtr = player;
+//     }
+//     else
+//     {
+//         while (current->next != nullptr)
+//         {
+//             current = current->next;
+//         }
+//         current->next = player;
+//     }
+// }
 
-    PlayerNode *player = new PlayerNode(name);
-    PlayerNode *current = pokedex->playerPtr;
-    if (current == nullptr)
-    {
-        pokedex->playerPtr = player;
-    }
-    else
-    {
-        while (current->next != nullptr)
-        {
-            current = current->next;
-        }
-        current->next = player;
-    }
-}
+// PlayerNode *newPlayerNode(string name)
+// {
+//     PlayerNode *player = new PlayerNode(name);
+//     return *player;
+// }
 
-newPlayerNode(string name)
-{
-    return new PlayerNode(name);
-}
+// void addPokemonToPlayer(PokeDex *pokedex, string playerName, string pokemon)
+// {
+//     PlayerNode *player = findPlayer(pokedex, playerName);
+//     if (player == nullptr)
+//     {
+//         cout << "Player does not exist" << endl;
+//         return;
+//     }
 
-// pokedex functions
-void listPlayers(PokeDex *pokedex);
-void listPokemons(PokeDex *pokedex);
-void displayPlayerDetails(PokeDex *pokedex, string playerName);
-void displayPokemonDetails(PokeDex *pokedex, string pokemonName);
+//     // check if pokemon exists
+//     PokemonNode *pokemon = findPokemon(pokedex, pokemon);
+//     if (pokemon == nullptr)
+//     {
+//         cout << "Pokemon does not exist" << endl;
+//         return;
+//     }
 
-listPlayers(PokeDex *pokedex)
+//     // check if player already has pokemon
+//     if (player->pokemons.find(pokemon) != player->pokemons.end())
+//     {
+//         cout << "Player already has pokemon" << endl;
+//         // increment count
+//         player->pokemons[pokemon]++;
+//         return;
+//     }
+
+//     player->pokemons.insert(pair<PokemonNode, int>(pokemon, 1));
+// }
+
+// // pokedex functions
+// void listPlayers(PokeDex *pokedex);
+// void listPokemons(PokeDex *pokedex);
+// void displayPlayerDetails(PokeDex *pokedex, string playerName);
+// void displayPokemonDetails(PokeDex *pokedex, string pokemonName);
+
+void listPlayers(PokeDex *pokedex)
 {
     PlayerNode *current = pokedex->playerPtr;
     while (current != nullptr)
@@ -186,7 +213,7 @@ listPlayers(PokeDex *pokedex)
     }
 }
 
-listPokemons(PokeDex *pokedex)
+void listPokemons(PokeDex *pokedex)
 {
     PokemonNode *current = pokedex->pokemonsPtr;
     while (current != nullptr)
@@ -196,49 +223,49 @@ listPokemons(PokeDex *pokedex)
     }
 }
 
-displayPlayerDetails(PokeDex *pokedex, string playerName)
-{
-    PlayerNode *player = findPlayer(pokedex, playerName);
+// void displayPlayerDetails(PokeDex *pokedex, string playerName)
+// {
+//     PlayerNode *player = findPlayer(pokedex, playerName);
 
-    if (player == nullptr)
-    {
-        cout << "Player not found" << endl;
-        return;
-    }
+//     if (player == nullptr)
+//     {
+//         cout << "Player not found" << endl;
+//         return;
+//     }
 
-    while (player != nullptr)
-    {
-        if (player->name == playerName)
-        {
-            cout << "Player Name: " << player->name << endl;
-            cout << "Player Pokemon(s) :" << endl;
-            // loop over map of pokemons (pokemon, count)
-            for (auto pokemon : player->pokemons)
-            {
-                cout << pokemon.first.name << " " << pokemon.second << endl;
-            }
-        }
-        player = player->next;
-    }
-}
+//     while (player != nullptr)
+//     {
+//         if (player->name == playerName)
+//         {
+//             cout << "Player Name: " << player->name << endl;
+//             cout << "Player Pokemon(s) :" << endl;
+//             // loop over map of pokemons (pokemon, count)
+//             for (auto pokemon : player->pokemons)
+//             {
+//                 cout << pokemon.first.name << " " << pokemon.second << endl;
+//             }
+//         }
+//         player = player->next;
+//     }
+// }
 
-displayPokemonDetails(PokeDex *pokedex, string pokemonName)
-{
-    PokemonNode *pokemon = findPokemon(pokedex, pokemonName);
-    if (pokemon == nullptr)
-    {
-        cout << "Pokemon not found" << endl;
-        return;
-    }
+// void displayPokemonDetails(PokeDex *pokedex, string pokemonName)
+// {
+//     PokemonNode *pokemon = findPokemon(pokedex, pokemonName);
+//     if (pokemon == nullptr)
+//     {
+//         cout << "Pokemon not found" << endl;
+//         return;
+//     }
 
-    while (pokemon != nullptr)
-    {
-        if (pokemon->name == pokemonName)
-        {
-            cout << "Pokemon Name: " << pokemon->name << endl;
-            cout << "Pokemon Type: " << pokemon->type << endl;
-            cout << "Pokemon Ability: " << pokemon->ability << endl;
-        }
-        pokemon = pokemon->next;
-    }
-}
+//     while (pokemon != nullptr)
+//     {
+//         if (pokemon->name == pokemonName)
+//         {
+//             cout << "Pokemon Name: " << pokemon->name << endl;
+//             cout << "Pokemon Type: " << pokemon->type << endl;
+//             cout << "Pokemon Ability: " << pokemon->ability << endl;
+//         }
+//         pokemon = pokemon->next;
+//     }
+// }

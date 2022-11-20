@@ -6,38 +6,34 @@
 
 int main()
 {
+    // create pokedex
+    PokeDex *pokedex = new PokeDex;
 
-    // // create a new pokemon
-    // PokemonNode *pikachu = new PokemonNode;
-    // pikachu->name = "Pikachu";
-    // pikachu->type = "Electric";
-    // pikachu->ability = "Static";
+    // list of list of pokemons
+    vector<vector<string>> pokemonsArr = {
+        {"Bulbasaur", "Grass", "Overgrow"},
+        {"Charmander", "Fire", "Blaze"},
+        {"Squirtle", "Water", "Torrent"},
+        {"Caterpie", "Bug", "Shield Dust"},
+        {"Metapod", "Bug", "Shed Skin"},
+        {"Butterfree", "Bug", "Compound Eyes"},
+        {"Beedrill", "Bug", "Swarm"},
+        {"Pidgey", "Normal", "Keen Eye"},
+        {"Rattata", "Normal", "Run Away"},
+        {"Ekans", "Poison", "Intimidate"},
+        {"Pikachu", "Electric", "Static"},
+        {"Sandslash", "Ground", "Sand Veil"},
+        {"Nidoran", "Poison", "Poison Point"},
+        {"Clefairy", "Fairy", "Cute Charm"}};
 
-    // PokemonNode *charmander = new PokemonNode;
-    // charmander->name = "Charmander";
-    // charmander->type = "Fire";
-    // charmander->ability = "Blaze";
+    // add pokemons to pokedex
+    for (int i = 0; i < pokemonsArr.size(); i++)
+    {
+        PokemonNode *pokemon = newPokemonNode(pokemonsArr[i][0], pokemonsArr[i][1], pokemonsArr[i][2]);
+    }
 
-    // PokemonNode *squirtle = new PokemonNode;
-    // squirtle->name = "Squirtle";
-    // squirtle->type = "Water";
-    // squirtle->ability = "Torrent";
-    // squirtle->next = nullptr;
+    // addPokemonToList(*pokedex, "Pikachu", "Electric", "Static");
 
-    // pikachu->next = charmander;
-    // charmander->next = squirtle;
-
-    // // create a new player
-    // PlayerNode *ash = new PlayerNode;
-    // ash->name = "Ash";
-    // ash->addPokemon(*pikachu);
-    // ash->next = nullptr;
-
-    // // create a new pokedex entry
-    // PokeDex *pokedex = new PokeDex;
-    // pokedex->pokemonsPtr = pikachu;
-    // pokedex->playerPtr = ash;
-
-    // // list players
-    // pokedex->listPlayers();
+    // list pokemons
+    listPokemons(pokedex);
 }
