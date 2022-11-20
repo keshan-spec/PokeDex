@@ -29,23 +29,15 @@ int main()
     // create pokemon nodes
     for (int i = 0; i < pokemonsArr.size(); i++)
     {
-        PokemonNode *pokemon = newPokemonNode(pokemonsArr[i][0], pokemonsArr[i][1], pokemonsArr[i][2]);
         addPokemonToList(pokedex, pokemonsArr[i][0], pokemonsArr[i][1], pokemonsArr[i][2]);
     }
-
-    // list pokemons
-    // listPokemons(pokedex);
-    // create a player
-    PlayerNode *player = newPlayerNode("Ash");
-    PlayerNode *player2 = newPlayerNode("Misty");
-    PlayerNode *player3 = newPlayerNode("Brock");
 
     // add player to pokedex
     addPlayerToList(pokedex, "Ash");
     addPlayerToList(pokedex, "Misty");
 
-    // listPlayers(pokedex);
-    // listPokemons(pokedex);
+    listPlayers(pokedex);
+    listPokemons(pokedex);
 
     // // add pokemons to player
     addPokemonToPlayer(pokedex, "Ash", "Bulbasaur");
@@ -58,6 +50,6 @@ int main()
     addPokemonToPlayer(pokedex, "Misty", "Butterfree");
 
     displayPlayerDetails(pokedex, "Ash");
-    // displayPokemonDetails(pokedex, "Bulbasaur");
     displayPlayerDetails(pokedex, "Misty");
+    displayPokemonDetails(pokedex, "Bulbasaur");
 }
